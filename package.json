@@ -1,7 +1,7 @@
 {
-  "name": "nan-",
+  "name": "nan-tool",
   "displayName": "nan-tool",
-  "description": "",
+  "description": "NAN的个人工具箱",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.83.0"
@@ -14,8 +14,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "nanzip.pack",
+        "command": "build.zip",
         "title": "nan: build zip"
+      },
+      {
+        "command": "clean.depend",
+        "title": "nan: clean depend"
       }
     ]
   },
@@ -25,7 +29,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "dep": "sh ./deploy.sh"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.2",
